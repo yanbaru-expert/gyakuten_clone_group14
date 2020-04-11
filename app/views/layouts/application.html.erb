@@ -4,12 +4,26 @@
     <title>GyakutenCloneGroup14</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag "application", media: "all", "data-turbolinks-track": "reload" %>
   </head>
 
   <body>
+  <!-- Default -->
+  <button type="button" class="btn btn-default">Default</button>
+  <!-- Primary -->
+  <button type="button" class="btn btn-primary">Primary</button>
+  <!-- Success -->
+  <button type="button" class="btn btn-success">Success</button>
+  <!-- Info -->
+  <button type="button" class="btn btn-info">Info</button>
+  <!-- Warning -->
+  <button type="button" class="btn btn-warning">Warning</button>
+  <!-- Danger -->
+  <button type="button" class="btn btn-danger">Danger</button>
+  <!-- Link -->
+  <button type="button" class="btn btn-link">Link</button>
     <%= yield %>
   </body>
 </html>
