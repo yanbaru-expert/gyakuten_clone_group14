@@ -30,4 +30,4 @@ group :development do
   gem 'rspec-rails'
 end
 
-gem 'rails-i18n'
+
