@@ -1,0 +1,57 @@
+<div class="fixed-top bg-primary">
+  <nav class="navbar navbar-expand-lg navbar-dark mx-auto">
+    <%= link_to "Gyakuten", root_path, class:"navbar-brand ml-4" %>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item dropdown">
+          <a href="" class="nav-link active dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" >Rails</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <%= link_to "動画教材", root_path, class:"nav-item nav-link active text-primary" %>
+            <a href="#" class="nav-item nav-link active text-primary">テキスト教材</a>
+            <a href="#" class="nav-item nav-link active text-primary">ライブコーディング</a>
+            <a href="#" class="nav-item nav-link active text-primary">質問集</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#">AWS講座</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#">PHP講座</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#">対談</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#">情報発信</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#">動画編集講座</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#">ライティング講座</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#">LINE@</a>
+        </li>
+
+        <% if user_signed_in? %>
+        <li class="nav-item">
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"nav-link active" %>
+        </li>
+        <% else %>
+        <li class="nav-item">
+          <%= link_to "ログイン", new_user_session_path, class:"nav-link active"%>
+        </li>
+        <li class="nav-item">
+          <%= link_to "新規登録", new_user_registration_path, class:"nav-link active" %>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
+</div>
