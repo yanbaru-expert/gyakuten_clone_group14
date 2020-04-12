@@ -17,11 +17,5 @@ RSpec.describe AwsText, type: :model do
         content: "testcontent"
     )
     expect(@aws).to be_valid
-
-    if @aws.save
-      p "保存されました。"
-    else
-      p "保存に失敗しました。"
-    end
   end
 end

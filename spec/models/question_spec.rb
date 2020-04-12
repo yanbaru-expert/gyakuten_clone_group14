@@ -17,11 +17,5 @@ RSpec.describe Question, type: :model do
         detail: "testdetail"
     )
     expect(@ques).to be_valid
-
-    if @ques.save
-      p "保存されました。"
-    else
-      p "保存に失敗しました。"
-    end
   end
 end

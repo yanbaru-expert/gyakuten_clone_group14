@@ -17,11 +17,5 @@ RSpec.describe Movie, type: :model do
         url: "testurl"
     )
     expect(@movie).to be_valid
-
-    if @movie.save
-      p "保存されました。"
-    else
-      p "保存に失敗しました。"
-    end
   end
 end
