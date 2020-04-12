@@ -1,9 +1,27 @@
 require 'rails_helper'
 
 RSpec.describe AwsText, type: :model do
-  it "titleとcontentが取得出来ること" do
-    aws = AwsText.new(title: "testtitle", content: "testcontent")
-    # contentのパラメータ追加
-    expect(aws.dis_title).to eq "aws_text : 正常に入力出来ています。"
+  it "titleが空だと無効であること" do
+    @aws = AwsText.new(title: nil)
+    expect(@aws.valid?).to eq(false)
+  end
+
+  it "contentが空だと無効であること" do
+    @aws = AwsText.new(content: nil)
+    expect(@aws.valid?).to eq(false)
+  end
+
+  it "titleとcontentが入力されていれば保存" do
+    @aws = AwsText.new(
+        title: "testtitle",
+        content: "testcontent"
+    )
+    expect(@aws).to be_valid
+
+    if @aws.save
+      p "保存されました。"
+    else
+      p "保存に失敗しました。"
+    end
   end
 end

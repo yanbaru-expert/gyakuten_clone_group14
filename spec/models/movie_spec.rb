@@ -1,9 +1,27 @@
 require 'rails_helper'
 
 RSpec.describe Movie, type: :model do
-  it "titleとurlが取得出来ること" do
-    movie = Movie.new(title: "testtitle", url: "testurl")
-    # contentのパラメータ追加
-    expect(movie.dis_title).to eq "movie : 正常に入力出来ています。"
+  it "titleが空だと無効であること" do
+    @movie = Movie.new(title: nil)
+    expect(@movie.valid?).to eq(false)
+  end
+
+  it "urlが空だと無効であること" do
+    @movie = Movie.new(url: nil)
+    expect(@movie.valid?).to eq(false)
+  end
+
+  it "titleとcontentが入力されていれば保存" do
+    @movie = Movie.new(
+        title: "testtitle",
+        url: "testurl"
+    )
+    expect(@movie).to be_valid
+
+    if @movie.save
+      p "保存されました。"
+    else
+      p "保存に失敗しました。"
+    end
   end
 end
