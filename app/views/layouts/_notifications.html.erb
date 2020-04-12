@@ -1,0 +1,6 @@
+<% flash.each do |key, value| %>
+  <%# フラッシュメッセージの表示 %>
+  
+  <%= content_tag(:div, value, class: "#{key} p-3 mb-2 bg-danger text-white") %>
+  
+<% end %>
