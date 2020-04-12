@@ -1,13 +1,6 @@
-<% flash.each do |key, value| %>
-  <%# フラッシュメッセージの表示、メッセージの種類によって色分け%>
-  <%# ログインや新規登録の成功時などのファラッシュメッセージ %>
-  <% if key.eql?("notice") %>
-    <%= content_tag(:div, value, class: "#{key} p-3 mb-2 bg-success text-white text-center") %>
-  <%# ログイン失敗時などのファラッシュメッセージ　%>
-  <% elsif key.eql?("alert") %>
-    <%= content_tag(:div, value, class: "#{key} p-3 mb-2 bg-danger text-white text-center") %>
-  <%# その他の場合のフラッシュメッセージ　%>
-  <% else %>
-    <%= content_tag(:div, value, class: "#{key} p-3 mb-2 bg-info text-white text-center") %>
-  <% end %>
+<% flash.each do |msg_type, msg| %>
+  <div class="alert alert-<%= msg_type %>" role="alert" id="alert">
+    <a href="#" class="close" data-dismiss="alert">×</a>
+    <%= msg %>
+  </div>
 <% end %>
