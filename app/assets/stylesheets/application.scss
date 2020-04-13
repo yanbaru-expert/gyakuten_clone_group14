@@ -1,13 +1,18 @@
 @import "bootstrap/scss/bootstrap";
-
+// 「ログインしました」などのフラッシュ用スタイル
 .alert-notice {
-    @extend .alert-success;
+  @extend .alert-info;
 }
-  
 .alert-alert {
     @extend .alert-danger;
 }
 
 body {
   padding-top: 56px;
+}
+
+.container-login {
+  @extend .container-fluid;
+  max-width: 576px;
+  padding: 2rem;
 }
