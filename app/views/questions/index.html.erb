@@ -1,0 +1,11 @@
+<% @questions.each do |question| %>
+    <div class="question-parent">
+            <div class="questions-title question-child">
+                <%= question.title %>
+            </div>
+            <div class="questions-created-time question-child">
+                質問日   <%= l question.created_at, format: :original %>
+            </div>
+    </div>
+<% end %>
+</div>
