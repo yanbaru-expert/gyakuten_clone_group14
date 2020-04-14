@@ -14,7 +14,7 @@ namespace :import_csv do
   end
 
   desc "Railsの動画教材をmoviesテーブルにインポート"
-  task rails_texts: :environment do
+  task rails_movie_texts: :environment do
     list = Import.csv_data(path: "db/csv_data/movie_data.csv")
 
     puts "インポート処理を開始"
