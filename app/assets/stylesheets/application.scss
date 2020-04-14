@@ -16,3 +16,24 @@ body {
   max-width: 576px;
   padding: 2rem;
 }
+
+// 質問一覧ページのスタイル
+.question-parent{
+  border: 2px solid #000000;
+  border-radius: 10px;
+  display:flex;
+  width:630px;
+  padding: 15px;
+  margin: 0 auto;
+  margin-bottom:50px;
+  margin-top:50px;
+}
+.questions-title{
+  font-size: 22px;
+  width: 350px;
+  margin-right: 20px;
+}
+.questions-created-time{
+  font-size: 18px;
+  opacity: 0.8;
+}
