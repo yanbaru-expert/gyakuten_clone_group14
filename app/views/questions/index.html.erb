@@ -1,3 +1,14 @@
+<div class="mt-5 question-form">
+    <h3 class="pt-5">新規登録</h3>
+    <%= form_for(@question) do |f| %>
+        <%= f.label :title, "[質問]",class: "control-label my-2" %>
+        <%= f.text_area :title,class: 'form-control', rows: "3" %>
+        <%= f.label :detail, "[詳細]",class: "control-label my-2" %>
+        <%= f.text_area :detail,class: "form-control", rows: "5" %>
+        <%= f.submit "送信",class: "btn btn-primary btn-block mt-4 py-2"%>
+    <% end %>
+</div>
+
 <% @questions.each do |question| %>
     <div class="question-parent">
             <div class="questions-title question-child">
