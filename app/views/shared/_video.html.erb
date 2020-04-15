@@ -1,7 +1,7 @@
 <div class="video-contents">
-    <p class="video-title"> Lv.<%= video.id %> : <%= video.title %> </p>
+    <p class="video-title">  <%= video.title %> </p>
     <div class="video-content">
-      <iframe src=<%= video.url %> frameborder="0"></iframe>
+      <iframe src=<%= video.url %> frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
     <% if video.source_code_url.present? %>
       <a href=<%= video.source_code_url %> class="video-source-link">ソースコード</a>
