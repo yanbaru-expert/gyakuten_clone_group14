@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   root to: 'movies#index'
-  resources :questions, only: [:index, :create]
+  resources :movies,    only: [:index]
+  resources :questions, only: [:index,:create]
 end

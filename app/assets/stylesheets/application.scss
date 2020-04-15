@@ -41,3 +41,30 @@ body {
   font-size: 18px;
   opacity: 0.8;
 }
+
+// 動画一覧ページ
+#movie {
+  padding: 120px 0 80px 0;
+  width: 990px;
+  margin: 0 auto;
+}
+
+.video-contents {
+  margin-bottom: 80px;
+  text-align: center;
+}
+
+.video-title {
+  font-size: 20px;
+  margin-bottom: 0px;
+}
+
+.video-content iframe{
+  width: 560px;
+  height: 315px;
+}
+
+.paginate-container {
+  display: flex;
+  justify-content: center;
+}
