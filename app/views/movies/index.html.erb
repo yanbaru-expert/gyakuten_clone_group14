@@ -1,3 +1,6 @@
 <section id="movie">
   <%= render partial: 'shared/video', collection: @movies, as: "video" %>
+  <div>
+    <%= paginate @movies %>
+  </div>
 </section>
