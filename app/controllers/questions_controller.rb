@@ -9,7 +9,9 @@ class QuestionsController < ApplicationController
         if @question.save
             redirect_to questions_path, notice: "質問を投稿しました"
         else
-            redirect_to questions_path, alert: "質問を投稿できませんでした"
+            flash.now[:alert] = "質問を投稿できませんでした"
+            @questions = Question.all
+            render :index
         end
     end
 
