@@ -1,0 +1,8 @@
+<h5>【質問】</h5>
+<p><%= @question.title %></p>
+<p><%= @question.detail %></p>
+<h5>【回答】</h5>
+<% @question.solutions.each do |solution| %>
+<p><%= solution.title %></p>
+<p><%= solution.detail %></p>
+<% end %>
