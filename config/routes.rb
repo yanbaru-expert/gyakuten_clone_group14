@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   root to: 'movies#index'
   resources :movies,    only: [:index]
-  resources :questions, only: [:index]
+  resources :questions, only: [:index,:create]
 end
