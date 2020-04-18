@@ -1,4 +1,8 @@
 @import "bootstrap/scss/bootstrap";
+
+// rougeのスタイルシーを読み込み
+@import "rouge";
+
 // 「ログインしました」などのフラッシュ用スタイル
 .alert-notice {
   @extend .alert-info;

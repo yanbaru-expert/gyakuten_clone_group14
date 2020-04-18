@@ -5,7 +5,8 @@ module ApplicationHelper
       filter_html: false,
       hard_wrap: true
     }
-    renderer = Redcarpet::Render::HTML.new(render_options)
+    # renderer = Redcarpet::Render::HTML.new(render_options)
+    renderer = CustomMarkdownRenderer.new(render_options)
 
     extensions = {
       autolink: true,
