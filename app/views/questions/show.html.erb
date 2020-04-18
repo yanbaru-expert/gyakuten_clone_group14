@@ -1,6 +1,9 @@
 <h5>【質問】</h5>
 <p><%= @question.title %></p>
+<hr>
+<h5>【詳細】</h5>
 <p><%= @question.detail %></p>
+<hr>
 <h5>【回答】</h5>
 <% @question.solutions.each do |solution| %>
 <p><%= solution.title %></p>

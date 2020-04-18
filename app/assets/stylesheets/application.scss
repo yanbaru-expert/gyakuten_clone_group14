@@ -27,6 +27,7 @@ body {
   margin: 0 auto;
   margin-bottom:50px;
   margin-top:50px;
+  text-decoration: none;
 }
 .questions-title{
   font-size: 22px;
@@ -36,6 +37,10 @@ body {
 .questions-created-time{
   font-size: 18px;
   opacity: 0.8;
+}
+
+.question-parent:hover {
+  text-decoration: none;
 }
 
 // 動画一覧ページ
