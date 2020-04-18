@@ -43,6 +43,29 @@ body {
   text-decoration: none;
 }
 
+// 質問詳細ページのスタイル
+#question {
+  padding: 60px 0 80px 0;
+  width: 710px;
+  margin: 0 auto;
+}
+
+.question-title{
+  margin-bottom: 20px;
+}
+
+.question-detail{
+  margin: 20px 0 20px;  
+}
+
+.solutions {
+  margin-top: 60px;  
+}
+
+.solution-detail {
+  margin: 20px 0 20px;  
+}
+
 // 動画一覧ページ
 #movie {
   padding: 120px 0 80px 0;

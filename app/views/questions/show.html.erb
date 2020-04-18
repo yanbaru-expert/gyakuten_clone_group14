@@ -1,11 +1,20 @@
-<h5>【質問】</h5>
-<p><%= @question.title %></p>
-<hr>
-<h5>【詳細】</h5>
-<p><%= @question.detail %></p>
-<hr>
-<h5>【回答】</h5>
-<% @question.solutions.each do |solution| %>
-<p><%= solution.title %></p>
-<p><%= solution.detail %></p>
-<% end %>
+<section id="question">
+  <div class="question-title">
+    <h5>【質問】</h5>
+    <p><%= @question.title %></p>
+  </div>
+  <hr>
+  <div class="question-detail">
+    <h5>【詳細】</h5>
+    <p><%= @question.detail %></p>
+  </div>
+  <hr>
+  <div class="solutions">
+    <% @question.solutions.each do |solution| %>
+      <h5>【回答】</h5>
+      <div class="solution-detail">
+        <p><%= solution.detail %></p>
+      </div>
+    <% end %>
+  </div>
+</section>
