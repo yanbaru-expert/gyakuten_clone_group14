@@ -64,7 +64,6 @@ ActiveRecord::Schema.define(version: 2020_04_17_004958) do
   end
 
   create_table "solutions", force: :cascade do |t|
-    t.string "title"
     t.text "detail"
     t.bigint "question_id", null: false
     t.datetime "created_at", precision: 6, null: false
