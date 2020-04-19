@@ -33,6 +33,8 @@ module GyakutenCloneGroup14
     # Don't generate system test files.
     config.generators.system_tests = nil
     config.autoload_paths << Rails.root.join("lib")
+    #日本時間に変更
+    config.time_zone = 'Tokyo'
   end
 end
 
