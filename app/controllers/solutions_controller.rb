@@ -1,8 +1,7 @@
 class SolutionsController < ApplicationController
     def create 
         @question = Question.find(params[:question_id])
-        @solution = Solution.new(detail: solution_params[:detail],
-                                 question_id: params[:question_id])
+        @solution = @question.solutions.build(solution_params)
         if @solution.save
             flash[:notice] = "回答を投稿しました"
             redirect_to controller: "questions", action: "show", id: @question.id 
