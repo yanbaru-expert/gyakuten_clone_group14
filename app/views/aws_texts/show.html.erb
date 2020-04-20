@@ -1,3 +1,2 @@
-<h1>awstext</h1>
-<p><%= @awstext.title %></p>
-<p><%= @awstext.content %></p>
+<h2><%= markdown(@awstext.title) %></h2>
+<p><%= markdown(@awstext.content) %></p>
