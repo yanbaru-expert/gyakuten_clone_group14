@@ -21,6 +21,58 @@ body {
   padding: 2rem;
 }
 
+// aws_texts index
+#container {
+  padding: 30px 0 80px 0;
+  margin: 0 auto;
+}
+#container table {
+  table-layout: fixed;
+  font-size: 17px;
+}
+#contents p {
+  width: 710px;
+  margin: 0 auto;
+  padding-bottom: 15px;
+}
+.text-center {
+  text-align: center;
+}
+.table-container {
+  width: 710px;
+  margin: 0 auto;
+}
+
+.table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 1rem;
+  background-color: transparent;
+  display: table;
+  border-spacing: 2px;
+  border-color: grey;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+.aws-table-head {
+  background-color: #007bff;
+}
+
+.text-white {
+  color: #fff !important;
+}
+
+.w-1 {
+  width: 10%;
+}
+
+.w-5 {
+  width: 50%;
+}
+
 // 質問一覧ページのスタイル
 .question-form{
   width:630px;
