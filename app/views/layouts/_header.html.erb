@@ -14,11 +14,13 @@
             <%= link_to "動画教材", movies_path, class:"nav-item nav-link active text-primary" %>
             <a href="#" class="nav-item nav-link active text-primary">テキスト教材</a>
             <a href="#" class="nav-item nav-link active text-primary">ライブコーディング</a>
-            <a href="questions" class="nav-item nav-link active text-primary">質問集</a>
+            <%= link_to "質問集", questions_path, class:"nav-item nav-link active text-primary" %>
+            <!-- <a href="questions" class="nav-item nav-link active text-primary">質問集</a> -->
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="aws_texts">AWS講座</a>
+          <%= link_to "AWS講座", aws_texts_path, class:"nav-link active" %>
+          <!-- <a class="nav-link active" href="aws_texts">AWS講座</a> -->
         </li>
         <li class="nav-item">
           <a class="nav-link active" href="#">PHP講座</a>

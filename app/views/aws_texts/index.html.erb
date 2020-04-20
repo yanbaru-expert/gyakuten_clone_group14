@@ -18,11 +18,11 @@
         </thead>
         <tbody>
           <% @awstexts.each_with_index do |awstext, i| %>
-            <tr>
-              <td><%= i+1 %></td>
-              <td><%= awstext.title %></td>
-            </tr>
-          <% end %>
+              <tr>
+                <td><%= i+1 %></td>
+                <td><%= link_to awstext.title,aws_text_path(awstext.id) %></td>
+              </tr>
+            <% end %>
         </tbody>
       </table>
     </div>
