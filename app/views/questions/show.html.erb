@@ -19,7 +19,7 @@
   </div>
   <div class="mt-5 question-form">
     <h3 class="pt-5">回答投稿</h3>
-    <%= form_for [@question,@solution], url: question_solutions_path(@question) do |f| %>
+    <%= form_with model:[@question,@solution], local: true do |f| %>
           <%= f.label :detail, "[回答]",class: "control-label my-2" %>
           <%= f.text_area :detail,class: 'form-control', rows: "8" %>
           <%= f.submit "送信",class: "btn btn-primary btn-block mt-4 py-2"%>
