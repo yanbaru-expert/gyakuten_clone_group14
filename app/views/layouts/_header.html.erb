@@ -1,3 +1,7 @@
+
+
+
+
 <div class="fixed-top bg-primary">
   <nav class="navbar navbar-expand-lg navbar-dark mx-auto">
     <%= link_to "Gyakuten", root_path, class:"navbar-brand ml-4" %>
@@ -38,7 +42,7 @@
           <%= link_to "ライティング講座", movies_path(category: "Writing"), class:"nav-link active" %>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="#">LINE@</a>
+          <%= link_to "LINE@", lines_path, class:"nav-link active" %>
         </li>
 
         <% if user_signed_in? %>

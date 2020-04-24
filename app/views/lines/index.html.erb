@@ -1,0 +1,28 @@
+<div id="container">
+  <section id="contents">
+    <div class="text-center">
+      <h2>LINE@</h2>
+    </div>
+
+    <div class="table-container">
+      <table class="table table-striped">
+        <thead class="aws-table-head text-white">
+          <tr>
+          <th class="w-1">No.</th>
+          <th class="w-3">ジャンル</th>
+          <th class="w-5">内容</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @lines.each_with_index do |line, i| %>
+              <tr>
+                <td><%= i+1 %></td>
+                <td><%= line.genre %></td>
+                <td><%= link_to line.title,line_path(line.id) %></td>
+              </tr>
+            <% end %>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>
