@@ -20,4 +20,8 @@ module ApplicationHelper
 
     Redcarpet::Markdown.new(renderer, extensions).render(text).html_safe
   end
+
+  def background_color_class
+      controller_name == "lines" ? "bg-success" : "bg-primary"
+  end
 end
