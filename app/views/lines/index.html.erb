@@ -14,9 +14,9 @@
           </tr>
         </thead>
         <tbody>
-          <% @lines.each_with_index do |line, i| %>
+          <% @lines.each.with_index(1) do |line, i| %>
               <tr>
-                <td><%= i+1 %></td>
+                <td><%= i %></td>
                 <td><%= line.genre %></td>
                 <td><%= link_to line.title,line_path(line.id) %></td>
               </tr>

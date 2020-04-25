@@ -17,9 +17,9 @@
           </tr>
         </thead>
         <tbody>
-          <% @awstexts.each_with_index do |awstext, i| %>
+          <% @awstexts.each.with_index(1) do |awstext, i| %>
               <tr>
-                <td><%= i+1 %></td>
+                <td><%= i %></td>
                 <td><%= link_to awstext.title,aws_text_path(awstext.id) %></td>
               </tr>
             <% end %>
