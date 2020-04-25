@@ -1,0 +1,7 @@
+<h1>itirann</h1>
+<% @texts.each_with_index do |text,i| %>
+  <tr>
+    <td><%= i+1 %></td>
+    <td><%= link_to text.title,text_path(text.id) %></td>
+  </tr>
+<% end %>
