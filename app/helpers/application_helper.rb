@@ -22,6 +22,6 @@ module ApplicationHelper
   end
 
   def background_color_class
-    (@line != nil || @lines != nil) ? "bg-success" : "bg-primary"
+      controller_name == "lines" ? "bg-success" : "bg-primary"
   end
 end
