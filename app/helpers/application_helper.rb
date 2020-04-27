@@ -24,4 +24,9 @@ module ApplicationHelper
   def background_color_class
       controller_name == "lines" ? "bg-success" : "bg-primary"
   end
+
+  def add_level_display
+    (controller_name == "movies" && @search_category == @default_categories) ? true : false
+  end
+  
 end
