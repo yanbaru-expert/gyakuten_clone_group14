@@ -1,5 +1,5 @@
 <div class="video-contents">
-    <p class="video-title"> <%= "Lv.#{video_counter+1}：" if add_level_display %>  <%= video.title %> </p>
+    <p class="video-title"> <%= "Lv.#{(@movies.current_page-1) * @movies.limit_value + video_counter+1}：" if add_level_display %>  <%= video.title %> </p>
     <div class="video-content">
       <iframe src=<%= video.url %> frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
@@ -7,3 +7,5 @@
       <a href=<%= video.source_code_url %> class="video-source-link">ソースコード</a>
     <% end %>
 </div>
+
+
