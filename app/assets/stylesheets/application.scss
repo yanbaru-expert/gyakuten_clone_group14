@@ -43,6 +43,39 @@ body {
   margin: 0 auto;
 }
 
+///text教材のページ
+.text-container{
+  padding: 20px 0 20px 0;
+  margin: 0 auto;
+}
+
+.multicol {
+  columns: 3;
+}
+
+.card-deck{
+  margin:10px 0px 10px 0px;
+}
+
+.row-eq-height {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-title {
+  color: black;
+}
+
+.card-text{
+  color: black;
+}
+
+.stretched-link:hover {
+  text-decoration: none;
+}
+
+
+
 .table {
   width: 100%;
   max-width: 100%;

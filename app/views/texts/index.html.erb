@@ -1,7 +1,39 @@
-<h1>itirann</h1>
-<% @texts.each_with_index do |text,i| %>
-  <tr>
-    <td><%= i+1 %></td>
-    <td><%= link_to text.title,text_path(text.id) %></td>
-  </tr>
-<% end %>
+<div class="container">
+    <section id="take_of_rails">
+      <div class="cover text-center">
+        <p>サロン特別割引適用パスワード：gyakutenseyo</p>
+      </div>
+    </section>
+  <div class="form-control-range">
+    <form class="mb-3 search-form mx-auto">
+      <i class="fa fa-search search-icon" title="Search"></i>
+      <input type="text" id="search-text" class="form-control search-text"
+             placeholder="教材を探す" aria-label="Username" aria-describedby="search-form">
+    </form>
+  </div>
+
+    <div class="text-container">
+      <h2 class="text-center">テキスト教材</h2>
+      <div class="row row-eq-height" id="cell">
+        <% @texts.each do |text, i| %>
+          <div class="d-flex col-md-4">
+            <div class="card-deck">
+              <div class="card" style="width: 22rem;" %>
+                <%= link_to(text_path(text), class: "stretched-link") do %>
+                  <img class="card-img-top" width="100%" height="180" src="/no_image.jpeg" >
+                  <div class="card-body">
+                    <h6 class="card-title">
+                      <%= text.title %></h6>
+                  <p class="card-text ">
+                    <%= text.genre %></p>
+                  </div>
+              <% end %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+</div>
+
+
