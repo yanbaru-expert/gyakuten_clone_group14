@@ -12,28 +12,22 @@
     </form>
   </div>
 
-    <div class="text-container">
-      <h2 class="text-center">テキスト教材</h2>
-      <div class="row row-eq-height" id="cell">
-        <% @texts.each do |text, i| %>
-          <div class="d-flex col-md-4">
-            <div class="card-deck">
-              <div class="card" style="width: 22rem;" %>
-                <%= link_to(text_path(text), class: "stretched-link") do %>
-                  <img class="card-img-top" width="100%" height="180" src="/no_image.jpeg" >
-                  <div class="card-body">
-                    <h6 class="card-title">
-                      <%= text.title %></h6>
-                  <p class="card-text ">
-                    <%= text.genre %></p>
-                  </div>
-              <% end %>
-              </div>
-            </div>
-          </div>
-        <% end %>
-      </div>
+    <h2 class="text-content">テキスト教材</h2>
+  <div class="row">
+    <% @texts.each do |text, i| %>
+    <div class="d-flex col-lg-4">
+      <a href="/texts/<%= text.id %>/" class="card">
+        <img class="card-img-top" src="/no_image.jpeg">
+        <div class="card-body">
+          <h5 class="card-title">
+            <%= text.title %>
+          </h5>
+          <p class="card-text">
+            <%= text.genre %>
+          </p>
+        </div>
+      </a>
     </div>
+    <% end %>
+  </div>
 </div>
-
-

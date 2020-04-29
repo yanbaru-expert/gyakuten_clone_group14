@@ -43,39 +43,6 @@ body {
   margin: 0 auto;
 }
 
-///text教材のページ
-.text-container{
-  padding: 20px 0 20px 0;
-  margin: 0 auto;
-}
-
-.multicol {
-  columns: 3;
-}
-
-.card-deck{
-  margin:10px 0px 10px 0px;
-}
-
-.row-eq-height {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.card-title {
-  color: black;
-}
-
-.card-text{
-  color: black;
-}
-
-.stretched-link:hover {
-  text-decoration: none;
-}
-
-
-
 .table {
   width: 100%;
   max-width: 100%;
@@ -193,4 +160,59 @@ table {
 .paginate-container {
   display: flex;
   justify-content: center;
+}
+
+
+///text教材のページ
+.form-control{
+  margin: auto;
+  padding: 0 20px;
+  max-width: 400px;
+  min-width: 300px;
+}
+
+
+
+.text-content{
+  text-align: center;
+}
+
+.col-lg-4{
+  padding: 30px 30px 30px 30px;
+}
+
+.card-deck{
+  margin:10px 0px 10px 0px;
+}
+
+
+.row-eq-height {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-title {
+  color: black;
+}
+
+.card-text{
+  color: black;
+}
+
+.stretched-link:hover {
+  text-decoration: none;
+}
+
+img {
+   width: 100%;
+   height: auto;
+   object-fit: cover;
+ }
+
+.card:hover {
+  border-width: thin;
+  border-color: #5D99FF;
+  transition: 0.3s;
+  box-shadow: 0px 0px 2px;
+  text-decoration: none;
 }
