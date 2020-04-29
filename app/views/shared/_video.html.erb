@@ -1,5 +1,5 @@
 <div class="video-contents">
-    <p class="video-title">  <%= video.title %> </p>
+    <p class="video-title"><%= add_level_display(video_counter) %><%= video.title %> </p>
     <div class="video-content">
       <iframe src=<%= video.url %> frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
@@ -7,3 +7,5 @@
       <a href=<%= video.source_code_url %> class="video-source-link">ソースコード</a>
     <% end %>
 </div>
+
+
