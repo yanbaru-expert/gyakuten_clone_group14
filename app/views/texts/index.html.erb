@@ -1,0 +1,33 @@
+<div class="container">
+    <section id="take_of_rails">
+      <div class="cover text-center">
+        <p>サロン特別割引適用パスワード：gyakutenseyo</p>
+      </div>
+    </section>
+  <div class="form-control-range">
+    <form class="mb-3 search-form mx-auto">
+      <i class="fa fa-search search-icon" title="Search"></i>
+      <input type="text" id="search-text" class="form-control search-text"
+             placeholder="教材を探す" aria-label="Username" aria-describedby="search-form">
+    </form>
+  </div>
+
+    <h2 class="text-content">テキスト教材</h2>
+  <div class="row">
+    <% @texts.each do |text, i| %>
+    <div class="d-flex col-lg-4">
+      <a href="/texts/<%= text.id %>/" class="card">
+        <img class="card-img-top" src="/no_image.jpeg">
+        <div class="card-body">
+          <h5 class="card-title">
+            <%= text.title %>
+          </h5>
+          <p class="card-text">
+            <%= text.genre %>
+          </p>
+        </div>
+      </a>
+    </div>
+    <% end %>
+  </div>
+</div>
