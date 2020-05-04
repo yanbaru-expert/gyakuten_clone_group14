@@ -15,7 +15,7 @@
     <h2 class="text-content">テキスト教材</h2>
   <div class="row">
     <% @texts.each do |text, i| %>
-    <div class="d-flex col-lg-4">
+    <div class="d-flex col-lg-4" id="text">
       <a href="/texts/<%= text.id %>/" class="card">
         <img class="card-img-top" src="/no_image.jpeg">
         <div class="card-body">
@@ -31,3 +31,4 @@
     <% end %>
   </div>
 </div>
+
