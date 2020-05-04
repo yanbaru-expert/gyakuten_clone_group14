@@ -5,7 +5,7 @@ $(function() {
         var val = $(this).val();
         
         $('.card-title').each(function() {
-            if($(this).text().indexOf(val) != -1){
+            if($(this).text().toLowerCase().indexOf(val.toLowerCase()) != -1){
                 $(this).parents('#text').removeClass("hidden")
                 $(this).parents('#text').addClass("d-flex")
             }else{
