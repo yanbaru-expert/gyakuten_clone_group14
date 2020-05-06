@@ -15,7 +15,7 @@ document.addEventListener('turbolinks:load', function() {
 
         .done(function(data){
             console.log(data)
-            if (data.length == 10){
+            if (data.length == 31){
                 $(".video-contents").removeClass("hidden")
                 $("nav").removeClass("hidden")
                 $(".searched-video").addClass("hidden")
