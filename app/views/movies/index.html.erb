@@ -1,3 +1,11 @@
+<div class="form-control-range mt-5">
+  <form class="mb-3 search-form mx-auto">
+    <i class="fa fa-search search-icon" title="Search"></i>
+    <input type="text" id="search-movies" class="form-control search-text"
+            placeholder="動画教材を探す" aria-label="Username" aria-describedby="search-form">
+  </form>
+</div>
+
 <section id="movie">
   <%= render partial: 'shared/video', collection: @movies, as: "video" %>
   <%= paginate @movies %>
