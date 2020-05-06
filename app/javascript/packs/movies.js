@@ -14,14 +14,13 @@ document.addEventListener('turbolinks:load', function() {
         })
 
         .done(function(data){
-            console.log(data)
-            if (data.length == 31){
+            if (data[0]=="keyword is nothing"){
                 $(".video-contents").removeClass("hidden")
-                $("nav").removeClass("hidden")
+                $("#paginate").removeClass("hidden")
                 $(".searched-video").addClass("hidden")
             }else{
                 $(".video-contents").addClass("hidden")
-                $("nav").addClass("hidden")
+                $("#paginate").addClass("hidden")
                 
                  
                 $(data).each(function(i, video){ 

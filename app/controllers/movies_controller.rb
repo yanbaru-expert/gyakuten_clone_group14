@@ -7,8 +7,12 @@ class MoviesController < ApplicationController
   end
 
   def search
-    @movies = Movie.where(category: @default_category).where('title iLIKE(?)', "%#{params[:keyword]}%")
-    render json: @movies
+    if params[:keyword].empty?
+      @movies = ["keyword is nothing"]
+    else
+      @movies = Movie.where(category: @default_category).where('title iLIKE(?)', "%#{params[:keyword]}%").limit(10)
+    end
+      render json: @movies
   end
 
 end
