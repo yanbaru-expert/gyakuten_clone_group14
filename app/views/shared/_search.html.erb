@@ -1,0 +1,9 @@
+<div class="searched-contents video-contents hidden">
+    <p class="video-title"><%= add_level_display(video_counter) %><span class="video-title-text"><%= video.title %></span> </p>
+    <div class="video-content">
+      <iframe src=<%= video.url %> frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <% if video.source_code_url.present? %>
+      <a href=<%= video.source_code_url %> class="video-source-link">ソースコード</a>
+    <% end %>
+</div>

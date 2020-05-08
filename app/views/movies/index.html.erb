@@ -9,8 +9,12 @@
 <% end %>
 
 <section id="movie">
-  <%= render partial: 'shared/video', collection: @movies, as: "video" %>
-  <div id="paginate">
+  <div class="default-video">
+    <%= render partial: 'shared/video', collection: @movies, as: "video" %>
     <%= paginate @movies%>
   </div>
+  <div class="searched-video hidden">
+    <%= render partial: 'shared/search', collection: @search_movies, as: "video"%>
+  </div>
+
 </section>

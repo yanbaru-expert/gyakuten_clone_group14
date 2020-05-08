@@ -1,59 +1,29 @@
 document.addEventListener('turbolinks:load', function() {
 
-    $("#search-movies").keyup(function(){
 
-        var val = $(this).val();
+        $("#search-movies").keyup(function(){
+            $(".searched-video").removeClass("hidden")
 
-        $.ajax({ 
-            url: '/movies/search', 
-            type: 'GET', 
-            data: ('keyword=' + val), 
-            processData: false, 
-            contentType: false, 
-            dataType: 'json' 
-        })
-
-        .done(function(data){
-            if (data[0]=="keyword is nothing"){
-                $(".video-contents").removeClass("hidden")
-                $("#paginate").removeClass("hidden")
-                $(".searched-video").addClass("hidden")
-            }else{
-                $(".video-contents").addClass("hidden")
-                $("#paginate").addClass("hidden")
-                
-                 
-                $(data).each(function(i, video){ 
-                    var common = '<div class="video-contents searched-video">'
-                                +'<p class="video-title">'
-                                + video.title
-                                +'</p>'
-                                +'<div class="video-content">'
-                                    +'<iframe src='
-                                    + video.url
-                                    +' frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
-                                +'</div>'
-                            +'</div>'
-                    
-                    var option = '<a href='
-                                +  video.source_code_url 
-                                + ' class="video-source-link">ソースコード</a>'
-
-                           
-                    $('#movie').append(common)
-
-                    if(video.source_code_url != null){
-                        $('#movie').append(option)
+            var val = $(this).val();
+            
+            $(".searched-contents").addClass("hidden")
+            $(".default-video").addClass("hidden")
+            
+            var count = 0
+            if(val == null || val == "" || val == " "){
+                $(".default-video").removeClass("hidden")
+            }else{ 
+                $('.video-title-text').each(function(){ 
+                    if($(this).text().toLowerCase().indexOf(val.toLowerCase()) != -1){
+                        $(this).parents(".searched-contents").removeClass("hidden")
+                        count += 1
                     }
-                });
- 
+                    if(count >= 10){
+                        return false;
+                    }
+                }); 
             }
-       
-
-     
-
+            
         });
-
-    });
 
 });
