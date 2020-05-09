@@ -154,6 +154,10 @@ table {
 .video-content iframe{
   width: 560px;
   height: 315px;
+  transition: 0.5s;
+  &:hover{
+    transform: scale(1.03, 1.03);
+  }
 }
 
 .paginate-container {
@@ -219,3 +223,4 @@ img {
 .hidden{
   display: none;
 }
+
