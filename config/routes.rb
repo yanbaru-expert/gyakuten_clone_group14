@@ -6,7 +6,11 @@ Rails.application.routes.draw do
   resources :texts
   resources :aws_texts, only: [:index,:show]
   resources :lines, only: [:index,:show]
-  resources :movies,    only: [:index]
+  resources :movies, only: [:index] do 
+    collection do 
+      get 'search'
+    end
+  end
   resources :questions, only: [:index, :create, :show] do
     resources :solutions, only: [:create]
   end

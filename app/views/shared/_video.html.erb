@@ -1,6 +1,6 @@
 <div class="video-contents">
     <p class="video-title"><%= add_level_display(video_counter) %><%= video.title %> </p>
-    <div class="video-content embed-responsive embed-responsive-4by3">
+    <div class="video-content embed-responsive embed-responsive-16by9">
       <iframe class="embed-responsive-item" src=<%= video.url %> frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
     <% if video.source_code_url.present? %>
