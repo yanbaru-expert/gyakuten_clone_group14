@@ -10,13 +10,13 @@
 </div>
 
 <% @questions.each do |question| %>
-        <%= link_to(question_path(question), class: 'question-parent question-link') do %>
-            <div class="questions-title question-child">
-                <%= question.title %>
-            </div>
-            <div class="questions-created-time question-child">
-                質問日   <%= l question.created_at, format: :original %>
-            </div>
-            <%= question.reviews_count %>Views
-        <% end %>
+    <%= link_to(question_path(question), class: 'question-parent question-link') do %>
+        <div class="questions-title question-child">
+            <%= question.title %>
+        </div>
+        <div class="questions-created-time question-child">
+            質問日   <%= l question.created_at, format: :original %>
+        </div>
+        <%= pluralize(question.reviews_count, "View", locale: :en) %>
+    <% end %>
 <% end %>

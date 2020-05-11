@@ -1,7 +1,7 @@
 class QuestionsController < ApplicationController
     def index
         @question = Question.new 
-        @questions = Question.all
+        @questions = Question.all.order(:id)
     end
 
     def show
