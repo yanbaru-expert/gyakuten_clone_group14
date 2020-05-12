@@ -22,6 +22,12 @@ gem 'rouge'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # Rails用のテストフレームワーク
+  gem 'rspec-rails'
+  # モデルに関するテストデータ作成用
+  gem 'factory_bot_rails'
+  # ダミーデータの生成
+  gem 'faker'
 end
 
 group :development do
@@ -32,7 +38,6 @@ group :development do
   gem 'pry-byebug'
   gem 'pry-doc'
   gem 'pry-rails'
-  gem 'rspec-rails'
 end
 
 
