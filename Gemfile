@@ -19,6 +19,7 @@ gem 'devise-bootstrap-views'
 gem 'kaminari'
 gem 'redcarpet'
 gem 'rouge'
+gem 'acts-as-taggable-on'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
