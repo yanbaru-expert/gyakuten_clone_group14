@@ -1,5 +1,11 @@
 ja:
   activerecord:
+    models:
+      solution: 質問
+    attributes:
+      solution:
+        detail: 詳細
+
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
