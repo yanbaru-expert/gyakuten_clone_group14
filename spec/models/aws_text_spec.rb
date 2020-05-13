@@ -1,21 +1,29 @@
 require 'rails_helper'
-
 RSpec.describe AwsText, type: :model do
-  it "titleが空だと無効であること" do
-    @aws = AwsText.new(title: nil)
-    expect(@aws.valid?).to eq(false)
-  end
+  describe "Aws_textモデルのテスト" do
 
-  it "contentが空だと無効であること" do
-    @aws = AwsText.new(content: nil)
-    expect(@aws.valid?).to eq(false)
-  end
+    context "titleが空の場合" do
+      let(:title_nil_text){build(:title_nil_text)}
+      it "validationエラーが起こる" do
+        title_nil_text.valid?
+        expect(title_nil_text.errors.full_messages).to include "タイトルを入力してください"
+      end
+    end
 
-  it "titleとcontentが入力されていれば保存" do
-    @aws = AwsText.new(
-        title: "testtitle",
-        content: "testcontent"
-    )
-    expect(@aws).to be_valid
+    context "contentが空の場合" do
+      let(:content_nil_text){build(:content_nil_text)}
+      it "validationエラーが起きること" do
+        content_nil_text.valid?
+        expect(content_nil_text.errors.full_messages).to include "内容を入力してください"
+      end
+    end
+
+    context "titleとcontentが入力されている場合" do
+      let(:not_nil_text){build(:not_nil_text)}
+      it "validationエラーが起きないこと" do
+        expect(not_nil_text).to be_valid
+      end
+    end
+
   end
 end

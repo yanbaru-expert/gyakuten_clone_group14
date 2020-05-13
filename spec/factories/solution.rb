@@ -1,6 +1,6 @@
 FactoryBot.define do
     factory :detail_nil_solution, class: Solution do
-        detail {nil}
+        detail {""}
         question
     end
 
