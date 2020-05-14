@@ -1,10 +1,6 @@
 FactoryBot.define do
-    factory :detail_nil_solution, class: Solution do
-        detail {""}
-        question
-    end
 
-    factory :not_nil_solution, class: Solution do
+    factory :solution do
         detail {Faker::String.random}
         question
     end
