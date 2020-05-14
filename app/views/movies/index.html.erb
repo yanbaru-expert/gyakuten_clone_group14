@@ -6,27 +6,20 @@
               placeholder="動画教材を探す" aria-label="Username" aria-describedby="search-form">
     </form>
   </div>
-<% end %>
-
-<form>
-  <div class="form-group">
-    <label class="control-label">タグで動画教材を探す</label>
-    <% @most_used_tags.each_with_index do |tag_data, i| %>
-      <div class="form-check">
-          <input class="form-check-input" type="checkbox" id="tagSelect<%= i %>" checked>
-          <label class="form-check-label" for="tagSelect<%= i %>"><%= tag_data.name %> </label>
-      </div>
-    <% end %>
-  </div>
-</form>
 
 <div class="field">
 </div>
 
-<%= form_tag(movies_path, method: "get") do %>
-  <%= label :tag_list, "タグで動画教材を探す" %><br>
-  <%= text_field_tag :tag_list, @most_used_tags.join(','), class: "form-control" %>
-  <%= submit_tag "送信",class: "btn btn-primary btn-block mt-4 py-2"%>
+<div class="tag-search border border-info py-2">
+  <h5 class="text-center">タグ検索</h5>
+  <div class="tag-btns">
+  <%= link_to "すべて(#{@tags.count})", movies_path, class:"btn btn-info m-1" %>
+  <% @tags.each do |tag| %>
+    <%= link_to "#{tag.name} (#{tag.count})", movies_path(tag_name: tag.name), class:"btn btn-sm btn-info m-1" %>
+  <% end %>
+  </div>
+</div>
+
 <% end %>
 
 <section id="movie">
