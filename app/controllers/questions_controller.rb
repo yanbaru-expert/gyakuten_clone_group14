@@ -1,12 +1,15 @@
 class QuestionsController < ApplicationController
     def index
         @question = Question.new 
-        @questions = Question.all
+        @questions = Question.all.order(:id)
     end
 
     def show
         @question = Question.find(params[:id])
         @solution = Solution.new
+
+        @question.increment!(:reviews_count, 1)
+        
     end
     
     def create

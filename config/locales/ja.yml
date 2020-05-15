@@ -5,6 +5,15 @@ ja:
     attributes:
       solution:
         detail: 詳細
+      aws_text:
+        title: タイトル
+        content: 内容
+      movie:
+        title: タイトル
+        url: url
+      question:
+        title: タイトル
+        detail: 詳細
 
     errors:
       messages:

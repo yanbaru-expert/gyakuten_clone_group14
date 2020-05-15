@@ -1,21 +1,28 @@
 require 'rails_helper'
 
 RSpec.describe Question, type: :model do
-  it "titleが空だと無効であること" do
-    @ques = Question.new(title: nil)
-    expect(@ques.valid?).to eq(false)
-  end
+  describe "question_modelのテスト" do 
+    context "titleが空の場合" do
+    let(:question){build(:question,title:"")}
+      it "validationエラーが起こる" do
+        question.valid?
+        expect(question.errors.full_messages).to include "タイトルを入力してください"
+      end
+    end
 
-  it "detailが空だと無効であること" do
-    @ques = Question.new(detail: nil)
-    expect(@ques.valid?).to eq(false)
-  end
+    context "detailが空の場合" do
+      let(:question){build(:question,detail:"")}
+      it "validationエラーが起こる" do
+        question.valid?
+        expect(question.errors.full_messages).to include "詳細を入力してください"
+      end
+    end
 
-  it "titleとcontentが入力されていれば保存" do
-    @ques = Question.new(
-        title: "testtitle",
-        detail: "testdetail"
-    )
-    expect(@ques).to be_valid
+    context "questionが空の場合" do
+      let(:question){build(:question)}
+      it "titleとcontentが入力されていれば保存" do
+        expect(question).to be_valid
+      end
+    end
   end
 end

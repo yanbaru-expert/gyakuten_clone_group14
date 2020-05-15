@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(version: 2020_05_12_110850) do
     t.text "detail"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "reviews_count", default: 0
   end
 
   create_table "solutions", force: :cascade do |t|
