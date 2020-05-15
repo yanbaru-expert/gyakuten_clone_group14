@@ -1,6 +1,7 @@
 namespace :import_tag_data do
   desc "Movieデータにタグデータを作成する"
   task movie: :environment do
+
     tag_data_list= [
       {title:"人生逆転サロンの活用法", tags:["Introduction", "使い方", "salon"]},
       {title:"Slackの使い方", tags:["使い方","slack"]},
@@ -17,17 +18,32 @@ namespace :import_tag_data do
       {title:"CSVデータインポートアプリの解説",tags:["rails","CSV","gem","インポート"]},
       {title:"Rakeタスクの実装",tags:["rails","rake","タスク"]},
       {title:"Deviseを使ったログイン機能の実装",tags:["rails","ログイン","gem","devise"]}
-  ]
+    ]
+
+    # list = Import.csv_data(path: "db/csv_data/tag_data.csv")
+    list = []
+    CSV.foreach("db/csv_data/tag_data.csv") { |row| list << row }
 
     puts "#######  インポート処理を開始します #######"
-    tag_data_list.each do |tag_data|
-      movie = Movie.find_by(title: tag_data[:title])
+    list.each do |array|
+      # 1列目はMovieのtitle
+      movie = Movie.find_by(title: array[0])
       if movie
-        puts "「#{tag_data[:title]}」のタグを設定します"
-        movie.tag_list.add(tag_data[:tags])
+        puts "「#{array[0]}」のタグを設定します"
+        # 2列目から最終列までがtagデータ
+        movie.tag_list.add(array[1..-1])
         movie.save
       end
     end
+
+    # tag_data_list.each do |tag_data|
+    #   movie = Movie.find_by(title: tag_data[:title])
+    #   if movie
+    #     puts "「#{tag_data[:title]}」のタグを設定します"
+    #     movie.tag_list.add(tag_data[:tags])
+    #     movie.save
+    #   end
+    # end
     puts "#######  インポート処理を終了します #######"
 
   end
