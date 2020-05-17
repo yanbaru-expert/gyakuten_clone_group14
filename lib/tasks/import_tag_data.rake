@@ -2,11 +2,10 @@ namespace :import_tag_data do
   desc "Movieデータにタグデータを作成する"
   task movie: :environment do
 
-    list = []
-    CSV.foreach("db/csv_data/tag_data.csv") { |row| list << row }
-
     puts "#######  インポート処理を開始します #######"
-    list.each do |array|
+    
+    CSV.foreach("db/csv_data/tag_data.csv") do |array| 
+      # binding.pry
       # 1列目はMovieのtitle
       movie = Movie.find_by(title: array[0])
       if movie

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_12_110850) do
+ActiveRecord::Schema.define(version: 2020_05_17_144421) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 2020_05_12_110850) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "category"
     t.index ["category"], name: "index_movies_on_category"
+    t.index ["title"], name: "index_movies_on_title"
   end
 
   create_table "questions", force: :cascade do |t|
