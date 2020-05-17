@@ -1,5 +1,6 @@
 module ApplicationHelper
 
+  include ActsAsTaggableOn::TagsHelper
   def markdown(text)
     render_options = {
       filter_html: false,

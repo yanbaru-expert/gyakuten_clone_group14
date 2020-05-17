@@ -6,6 +6,20 @@
               placeholder="動画教材を探す" aria-label="Username" aria-describedby="search-form">
     </form>
   </div>
+
+<div class="field">
+</div>
+
+<div class="tag-search border border-info py-2">
+  <h5 class="text-center">タグ検索</h5>
+  <div class="tag-btns">
+  <%= link_to "すべて(#{@tags.count})", movies_path, class:"btn btn-info m-1" %>
+  <% @tags.each do |tag| %>
+    <%= link_to "#{tag.name} (#{tag.count})", movies_path(tag_name: tag.name), class:"btn btn-sm btn-info m-1" %>
+  <% end %>
+  </div>
+</div>
+
 <% end %>
 
 <section id="movie">

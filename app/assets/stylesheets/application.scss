@@ -238,6 +238,15 @@ img {
   display: none;
 }
 
+.tag-search{
+  max-width: 710px;
+  margin: 30px auto;
+}
+
+.tag-btns {
+  text-align: center;
+}
+
 @media(min-width: 0px){
   // 全ページ共通
   body {
