@@ -10,8 +10,8 @@
 <div class="field">
 </div>
 
-<div class="tag-search border border-info py-2">
-  <h5 class="text-center">タグ検索</h5>
+<div class="tag-search border border-info py-2">  
+  <div class="tag-search-title text-center"><i class="fas fa-tags text-primary"></i>タグ検索</div>
   <div class="tag-btns">
   <%= link_to "すべて(#{@tags.count})", movies_path, class:"btn btn-info m-1" %>
   <% @tags.each do |tag| %>
