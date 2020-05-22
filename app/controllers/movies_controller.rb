@@ -4,7 +4,7 @@ class MoviesController < ApplicationController
     @default_categories = ['Basic', 'Git', 'Ruby', 'Ruby on Rails']
     @search_category = params[:category] || @default_categories
     @movies = Movie.where(category: @search_category).page(params[:page])
-    @search_movies = Movie.where(category: @default_category)
+    @search_movies = Movie.where(category: @default_categories)
 
     # タグ表示用
     @tags = Movie.tag_counts_on(:tags).order('count DESC')
