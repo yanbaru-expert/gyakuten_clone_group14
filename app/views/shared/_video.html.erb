@@ -2,7 +2,7 @@
     <p class="video-title"><%= add_level_display(video_counter) %><%= video.title %> </p>
     <% unless video.tag_list.empty? %>
       <div class="video-tag my-2">
-        <span>タグ: </span>
+        <i class="fas fa-tags text-primary"></i>
         <% video.tag_list.each do |tag| %>
           <%= link_to tag, movies_path(tag_name: tag), class:"btn btn-sm btn-info" %>
         <% end %>
